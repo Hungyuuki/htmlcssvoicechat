@@ -47,7 +47,21 @@ body {
   padding-left: 10px;
   z-index: -10;
   width: 290px;
+  justify-content: space-between;
 }
+
+.header .monolisix{
+  font-weight: bold;
+  font-size: large;
+  position: absolute;
+  left: 55px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin-top: 9px;
+  margin-bottom: 10px;
+}
+/* .header p{
+  position: relative;
+} */
 
 .sub-select {
   margin-top: 10px;
@@ -64,6 +78,7 @@ body {
   margin-top: 0px;
   padding-left: 10px;
 }
+
 
 .buttons {
   padding: 10px 10px 10px;
@@ -89,8 +104,9 @@ body {
   width: 16px;
   height: 16px;
   position: absolute;
-  right: 20px;
+  right: 10px;
   top: 12px;
+  opacity: 0.6;
 };
 
 /* .floors {
@@ -98,7 +114,6 @@ body {
   z-index: 0;
   left: 22px;
 }
-
 .floors .add {
   margin-left: 275px;
   font-weight: lighter;
@@ -108,12 +123,10 @@ body {
   border: 1px solid black;
   border-radius: 0 0 5px 0;
 }
-
 .floors .add-new {
   height: 40px;
   cursor: pointer;
 }
-
 .floors p {
   padding-left: 5px;
   font-size: 15px;
@@ -125,7 +138,6 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
 .floor {
   margin-left: 290px;
   height: 70px;
@@ -138,13 +150,15 @@ body {
 } */
 
 .room-list {
+  display: inline-block;
   position: absolute;
-  top: 300px;
+  top: 350px;
   margin-left: 10px;
   width: 290px;
   overflow-y: scroll;
   overflow-x: hidden;
   height: 70%;
+  opacity: 0.6;
 }
 
 #room-list::-webkit-scrollbar-track {
@@ -160,12 +174,15 @@ body {
 }
 
 .room {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-wrap: nowrap; */
+  /* flex-direction: column; */
   width: 290px;    /*setting chiều ngang*/
   padding-bottom: 5px;
   z-index: 10;
+  position: absolute;
+  top: 130px;
+  opacity: 0.6;
 }
 
 .room .user {
@@ -173,34 +190,64 @@ body {
   justify-content: space-between;
 }
 
+.room .lock-keyhole{
+  display: inline-block;
+  position: absolute;
+}
+
 .header-room {
   display: flex;
   align-items: center;
-  background-color: #d9d9d9;
+  background-color: #f3f3f3;
   border-radius: 5px 0 0 5px;
   padding-left: 10px;
-  margin-top: 8px;
+  margin-top: 60px;
+  margin-bottom: 8px;
 }
 
 .header-room i {
-  padding: 20px 20px 20px 20px;
+  padding: 10px 10px 10px 10px;
+}
+.header-room .button {
+  text-align: center;
+  display: inline-block;
 }
 
-.header-room img {
+
+
+/* .header-room img {
   height: 50px;
   width: 50px;
   margin-right: 10px;
   border-radius: 5px;
+} */
+
+
+.circle{
+  opacity: 0.6;
 }
+.svg-circle{
+  background: red;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
 
 .user {
   display: flex;
   align-items: center;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  top: 80px;
+  left: 20px;
 }
 
 .user * {
   width: 30px;
   text-align: center;
+  left: 40px;
 }
 
 .user .btn {
@@ -214,18 +261,28 @@ body {
 .user h4 {
   min-width: 110px;
   text-align: left;
+
 }
 
 .user .logo-user {
-  width: 50px;
-  height: 50px;
-  padding: 5px;
+  width: 40px;
+  height: 40px;
 }
 
+
 .user .logo-user img {
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  position: absolute;
+  left: 30px;
+  margin-top: 2.5px;
+  margin-bottom: 2.5px;
+}
+
+.user .micbuttonuser {
+  position: absolute;
+  right: 30px;
 }
 
 .footer {
@@ -328,10 +385,6 @@ button {
   cursor: pointer;
 }
 
-.button {
-  cursor: pointer;
-}
-
 .image-room {
   height: 60px;
   width: 40px;
@@ -388,30 +441,42 @@ button {
 .statusMicHeadphone {
   position:absolute;
   height: 50px;
-  width: 300px;
+  width: 290px;
   align-items: center;
   background-color: #f3f3f3;
   bottom: 70px;
+
 }
-.statusMicHeadphone button{
-  position: static;
+.statusMicHeadphone p{
+  position: absolute;
   right: -120px;
-  bottom: -50px;
+  bottom: -30px;
+  background-color: rgb(77, 160, 139);
+  color: white;
+  width: 100px;
+  height: 35px;
+  text-align: center;
+  border-radius: 10px;
+  padding-top: 10px;
+  font-weight: thin;
 }
 .micbutton{
   position: absolute;
   right: 100px;
   bottom: 14px;
+  opacity: 0.6;
 }
 .headphonebutton{
   position: absolute;
   right: 60px;
   bottom: 11px;
+  opacity: 0.6;
 }
 .screenbutton{
   position: absolute;
   right: 20px;
   bottom: 14px;
+  opacity: 0.6;
 }
 
 
@@ -425,6 +490,7 @@ button {
   position: absolute;
   right: 30px;  
   bottom: 45px;
+  opacity: 0.6;
 }
 .exitbutton i{
   position: absolute;
@@ -439,49 +505,67 @@ logo monolisix */
 .sub-header {
   position:absolute;
   height: 50px;
-  width: 310px;
+  width: 290px;
   align-items: center;
   top: 90px;
   background-color: #f3f3f3;
   display: flex;
   /* padding-left: 10px; */
+  text-align: justify;
+  opacity: 0.6;
+  font-size: smaller;
+  font-weight: 900;
 }
 .barItem1 a{
   background-color: rgb(255, 89, 89);
   position: absolute;
+  width: 110px;
   left: 10px;
   top: 10px;
   color: white;
   border-radius: 15px 15px 15px 15px;
   padding: 5px;
   margin-left: 5px;
+  text-align: center;
+  font-family: 'Arial', Helvetica, sans-serif;
+  font-weight: 600;
 }
 .barItem2 a{
   background-color: rgb(218, 208, 208);
   position: absolute;
-  right: 125px;
+  right: 106px;
   top: 10px;
   border-radius: 15px 15px 15px 15px;
   padding: 5px;
   margin-left: 5px;
-
+  width: 52px;
+  font-family: 'Arial', Helvetica, sans-serif;
+  font-weight: 600;
 }
 .barItem3 a{
   background-color: rgb(218, 208, 208);
   position: absolute;
-  right: 60px;
+  right: 48px;
   top: 10px;
   border-radius: 15px 15px 15px 15px;
   padding: 5px;
   margin-left: 5px;
+  width: 52px;
+  font-family: 'Arial', Helvetica, sans-serif;
+  font-weight: 600;
+
 }
 
 .svg-circleplus { 
   height: 40px;
   stroke: rgb(218, 208, 208);
   position: absolute;
-  right: 20px;
+  right: 8px;
   top: 8px;
+  
+}
+.svg-circleplus line{
+  color: black;
 }
 
 
@@ -549,12 +633,12 @@ body {
 .Button {
   background-color: grey;
   border: 0;
-  border-radius: 10px;
+  border-radius: 15px;
   color: inherit;
   display: inline-block;
   font: inherit;
-  width: 45px;
-  height: auto;
+  width: 40px;
+  height: 40px;
   line-height: 1;
   margin: 0;
   padding: 0;
@@ -589,13 +673,16 @@ body {
   transition: 0.2s ease;
   width: 100%;
   bottom: 10px;
-  left: 50px
+  left: 50px;
+  font-size: small;
+  font-weight: 900;
+  opacity: 0.5;
 }
 
-.Button:focus .Button-inner {
+/* .Button:focus .Button-inner {
   border-color: #fff;
-  /* box-shadow: 0 0 0 2px #456BD9; */
-}
+   box-shadow: 0 0 0 2px #456BD9; 
+} */
 
 .Button:hover .Button-inner {
   filter: brightness(1.1);
@@ -627,21 +714,23 @@ body {
   display: inline-block;
   font-size: 1em;
   font-weight: 300;
-  height: 1.8em;
+  height: 1.4em;
   justify-content: center;
   line-height: 1;
-  width: 1.44em;
+  width: 1em;
   position: absolute;
   right: -2px;
   bottom: -2px;
   text-align: bottom;
+  font-weight: 900;
 }
 .Badge p{
-  bottom: 10px;
+  position: absolute;
+  bottom: -15px;
+  width: 120px;
+  height: 30px;
+  left: 15px;
 }
-
-
-
 
 
 
@@ -786,12 +875,27 @@ input {
 
 
 
+/* Dấu mũi tên */
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  opacity: 0.6;
+  position: absolute;
+  right: 115px;
+  top: 14px;
+}
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
 
 
-
-
-
-
-
-
-
+.general {
+  color: #fff;
+}

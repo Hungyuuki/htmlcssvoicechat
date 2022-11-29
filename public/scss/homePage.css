@@ -174,15 +174,16 @@ body {
 }
 
 .room {
-  /* display: flex; */
-  /* flex-wrap: nowrap; */
-  /* flex-direction: column; */
-  width: 290px;    /*setting chiều ngang*/
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  width: 290px;   
   padding-bottom: 5px;
   z-index: 10;
   position: absolute;
   top: 130px;
   opacity: 0.6;
+  display: block;
 }
 
 .room .user {
@@ -201,8 +202,8 @@ body {
   background-color: #f3f3f3;
   border-radius: 5px 0 0 5px;
   padding-left: 10px;
-  margin-top: 60px;
-  margin-bottom: 8px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .header-room i {
@@ -211,78 +212,144 @@ body {
 .header-room .button {
   text-align: center;
   display: inline-block;
+  font-size: small;
+  font-weight: 900;
+  margin-left: 5px;
 }
 
 
 
-/* .header-room img {
+.header-room img {
   height: 50px;
   width: 50px;
   margin-right: 10px;
   border-radius: 5px;
-} */
-
-
-.circle{
-  opacity: 0.6;
 }
+
+
+
 .svg-circle{
   background: red;
   height: 12px;
   width: 12px;
   border-radius: 50%;
   margin-right: 10px;
+  opacity: 0.6;
+}
+
+
+.content{
+  width: 290px;
+  position: absolute;
+  top: 130px;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  font-family: 'Arial', Helvetica, sans-serif;
+}
+.object{
+  padding-left: 30px;
 }
 
 
 .user {
+  /* position: absolute; */
   display: flex;
   align-items: center;
   margin-bottom: 5px;
   margin-top: 5px;
-  top: 80px;
-  left: 20px;
+  top: 60px;
 }
+
+  .statusexit-background {  
+    background: rgb(77, 160, 139);
+    align-items: center;
+    border-radius: 50%;
+    height: 30px;
+    width: 20px;
+    position: absolute;
+    left: 50px;
+    bottom: 143px;
+    border: 2px solid #fff;
+    scale: 0.8;
+    display: flex;
+  }
+  .statuscalling-background {  
+    background: #424ae4;
+    align-items: center;
+    border-radius: 50%;
+    height: 30px;
+    width: 20px;
+    position: absolute;
+    left: 50px;
+    bottom: 355px;
+    border: 2px solid #fff;
+    scale: 0.8;
+    display: flex;
+    rotate: -30deg;
+  }
+  .statusscreen-background { 
+    color: white; 
+    background: red;
+    align-items: center;
+    border-radius: 50%;
+    height: 30px;
+    width: 20px;
+    position: absolute;
+    left: 255px;
+    bottom: 216px;
+    scale: 0.8;
+    display: flex;
+    opacity: 0.6;
+  }
+
+  .statusexit-background span{
+    text-align: bottom;
+  }
 
 .user * {
   width: 30px;
   text-align: center;
-  left: 40px;
 }
 
-.user .btn {
+/* .user .btn {
   background-color: #febdb5;
   color: #ffffff;
   border: 1px solid black;
   border-radius: 3px;
   width: 50px;
-}
+} */
 
 .user h4 {
-  min-width: 110px;
+  width: 160px;
   text-align: left;
-
+  opacity: 1.5;
+  margin-left: 10px;
 }
 
-.user .logo-user {
-  width: 40px;
-  height: 40px;
+.user .logo-user{
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
 }
 
 
 .user .logo-user img {
-  width: 35px;
-  height: 35px;
-  border-radius: 10px;
-  position: absolute;
-  left: 30px;
-  margin-top: 2.5px;
-  margin-bottom: 2.5px;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
 }
 
 .user .micbuttonuser {
-  position: absolute;
+  position: absolute; 
   right: 30px;
+  opacity: 0.6;
+  /* float: inline-end; */
+}
+.user .calendar{
+  position: absolute;
+  right: 100px;
 }
 
 .footer {
@@ -433,10 +500,14 @@ button {
   position: static;
 }
 
-/* .headphone button{
+.headphone-button{
   width: 20px;
   height: 20px;
-} */
+  /* float: left; */
+  position: absolute;
+  right: 10px;
+}
+
 
 .statusMicHeadphone {
   position:absolute;
@@ -558,14 +629,14 @@ logo monolisix */
 
 .svg-circleplus { 
   height: 40px;
+  width: 40px;
   stroke: rgb(218, 208, 208);
   position: absolute;
   right: 8px;
   top: 8px;
-  
 }
-.svg-circleplus line{
-  color: black;
+.svg-circleplus .plus{
+  stroke: rgb(88, 81, 81);
 }
 
 
@@ -623,17 +694,10 @@ body {
 }
 
 
-
-
-
-
-
-
-/*notification*/
 .Button {
   background-color: grey;
   border: 0;
-  border-radius: 15px;
+  border-radius: 10px;
   color: inherit;
   display: inline-block;
   font: inherit;
@@ -647,11 +711,13 @@ body {
   text-decoration: none;
   user-select: none;
 }
+.Button img{
+  border-radius: 5px;
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+}
 
-/**
- * Override default focus styles so we can apply our own.
- * Never do this unless you will replace them!!
- */
 
 .Button:focus {
   outline: none;
@@ -669,20 +735,15 @@ body {
   display: flex;
   height: 2.5em;
   min-width: 25em;
-  position: relative;
+  position: absolute;
   transition: 0.2s ease;
   width: 100%;
-  bottom: 10px;
+  bottom: 15px;
   left: 50px;
   font-size: small;
   font-weight: 900;
   opacity: 0.5;
 }
-
-/* .Button:focus .Button-inner {
-  border-color: #fff;
-   box-shadow: 0 0 0 2px #456BD9; 
-} */
 
 .Button:hover .Button-inner {
   filter: brightness(1.1);
@@ -713,7 +774,6 @@ body {
   color: black;
   display: inline-block;
   font-size: 1em;
-  font-weight: 300;
   height: 1.4em;
   justify-content: center;
   line-height: 1;
@@ -726,33 +786,10 @@ body {
 }
 .Badge p{
   position: absolute;
-  bottom: -15px;
   width: 120px;
   height: 30px;
   left: 15px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

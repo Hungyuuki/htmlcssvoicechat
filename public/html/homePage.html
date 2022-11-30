@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +15,9 @@
 </head>
 <body>
     <div class="title-bar">
-        <div class="close button" onclick="closeWindown()"><img src="../static/close.png"></div>
-        <div class="minimize button" onclick="minimizeWindown()"><img src="../static/minimize.png" alt=""></div>
-        <div class="pin button" onclick="pinWindown()"><img src="../static/pin.png" alt=""></div>
+        <div class="close" onclick="closeWindown()"></div>
+        <div class="minimize" onclick="minimizeWindown()"></div>
+        <div class="pin" onclick="pinWindown()"></div>
     </div>
             </div>
         </div>
@@ -37,26 +38,6 @@
             <div class="room" id="room">
             </div>
         </div>
-        <!-- Bắt đầu 1 room -->
-        
-        <!-- <div id="room-list" class="room-list">
-            <div class="room" id="room">
-                <div class="user" id="user">
-                    <div class="logo-user button"><img src=${resultUsers.room_users[0][j].user_avatar}></div>
-                    <h4 class="username">gggggg</h4>
-                    <i class="fa-solid fa-calendar-days"></i>
-                    <div class="micbuttonuser" style="display:none">
-                      <i class="fa-solid fa-microphone"></i>
-                      <i class="fa-solid fa-microphone-slash"></i>
-                    </div>
-                    <div class="headphone button" style="display:none">
-                      <i class="fa-solid fa-headphones"></i>
-                      <img src="../static/earphone.png"  class="fa-solid fa-earphones" style="width: 20px; height: 20px;" >
-                    </div>
-                </div>
-            </div>
-        </div> -->
-    <!-- End 1 room -->
     <ul class="content">
         <li><div id="room">
             <div class="header-room button">
@@ -64,8 +45,8 @@
             <svg class="svg-circle">
               </svg>
             </div></span>
-            <span class="general"></span><h4 class="button" style="opacity: 0.6;">MEETING</h4></span>
-            <span class="general"></span><div class="lock-keyhole" style="opacity: 0.6;"><i class="fa-solid fa-lock"></i></div></span>
+            <span class="general"></span><h4 class="button">MEETING</h4></span>
+            <span><div class="lock-keyhole"><i class="fa-solid fa-lock"></i></div></span>
             </div>
         </div></li>
             <ul>
@@ -73,18 +54,34 @@
                     <!-- <div id="room-list" class="room-list"> -->
                         <div class="user" id="user">
                             <div class="logo-user button"><img src='../static/nekoavt.png'></div>
-                            <h4 class="username" style="opacity: 0.6;">小路康丸</h4>
+                            <h4 class="username">小路康丸</h4>
                             <div class="calendar">
-                                <i class="fa-solid fa-calendar-days" style="opacity: 0.6;"></i>
+                                <span class="material-icons">
+                                    calendar_month
+                                    </span>
                             </div>
+                            <div class="flex-container">
                             <div class="micbuttonuser" style="display:none">
-                              <i class="fa-solid fa-microphone"></i>
-                              <i class="fa-solid fa-microphone-slash"></i>
+                                <span class="material-icons">
+                                    mic
+                                    </span>
+                                    <span class="material-icons">
+                                        mic_off
+                                        </span>
                             </div>
                             <div class="headphone-button" style="display:none">
-                              <i class="fa-solid fa-headphones"></i>
-                              <img src="../static/earphone.png"  class="fa-solid fa-earphones" style="width: 20px; height: 20px;" >
-
+                                <span class="material-icons" style="display: none;">
+                                    headset
+                                    </span>
+                              <span class="material-icons">
+                                headset_off
+                                </span>
+                                <div class="statusscreen-background" style="display:none">
+                                    <span class="material-icons">
+                                        tv
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     <!-- </div> -->
                 </div></li>
@@ -92,29 +89,44 @@
                     <!-- <div id="room-list" class="room-list"> -->
                         <div class="user" id="user">
                             <div class="logo-user button"><img src='../static/nekoavt.png' style="border-width: 2px; border-style: solid; border-color: red;"></div>
-                            <h4 class="username" style="opacity: 0.6;">てつ</h4>
+                            <h4 class="username">てつ</h4>
                             <div class="calendar" style="display:none">
                                 <i class="fa-solid fa-calendar-days"></i>
                             </div>
+                            <div class="flex-container">
                             <div class="micbuttonuser" style="display:none">
-                              <i class="fa-solid fa-microphone"></i>
-                              <i class="fa-solid fa-microphone-slash"></i>
+                                <span class="material-icons">
+                                    mic
+                                    </span>
+                                    <span class="material-icons">
+                                        mic_off
+                                        </span>
                             </div>
                             <div class="headphone-button" style="display:none">
-                              <i class="fa-solid fa-headphones"></i>
-                              <img src="../static/earphone.png"  class="fa-solid fa-earphones" style="width: 20px; height: 20px;" >
+                                <span class="material-icons" style="display: none;">
+                                    headset
+                                    </span>
+                              <span class="material-icons">
+                                headset_off
+                                </span>
+                                <div class="statusscreen-background" style="display:none">
+                                    <span class="material-icons">
+                                        tv
+                                        </span>
+                                </div>
                             </div>
+                        </div>
                     <!-- </div> -->
                 </div></li>
             </ul>
         <li><li><div id="room">
             <div class="header-room button" style="padding-top: 8px; padding-bottom:8px">
             <span class="general"><div class="circle">
-            <svg class="svg-circle" style="background-color: grey;">
+            <svg class="svg-circle" style="background-color: rgb(109,113,131);">
               </svg>
             </div></span>
-            <span class="general"></span><h4 class="button" style="opacity: 0.6;">DIRECTOR</h4></span>
-            <span class="general"></span><div class="lock-keyhole" style="opacity: 0.6; display: none;"><i class="fa-solid fa-lock"></i></div></span>
+            <span class="general"></span><h4 class="button">DIRECTOR</h4></span>
+            <span class="general"></span><div class="lock-keyhole" style="display: none;"><i class="fa-solid fa-lock"></i></div></span>
             </div></li>
         </div>
         <li><div id="room">
@@ -123,8 +135,8 @@
             <svg class="svg-circle">
               </svg>
             </div></span>
-            <span class="general"></span><h4 class="button" style="opacity: 0.6;">ENGINEER</h4></span>
-            <span class="general"></span><div class="lock-keyhole" style="opacity: 0.6; display: none;"><i class="fa-solid fa-lock"></i></div></span>
+            <span class="general"></span><h4 class="button">ENGINEER</h4></span>
+            <span class="general"></span><div class="lock-keyhole" style="display: none;"><i class="fa-solid fa-lock"></i></div></span>
             
         </div></li>
             <ul>
@@ -132,17 +144,30 @@
                     <!-- <div id="room-list" class="room-list"> -->
                             <div class="user" id="user">
                                 <div class="logo-user button"><img src='../static/nekoavt.png'></div>
-                                <h4 class="username" style="opacity: 0.6;">虎ロ</h4>
-                                <div class="calendar" style="display:none">
-                                    <i class="fa-solid fa-calendar-days"></i>
+                                <h4 class="username">虎ロ</h4>
                                 </div>
-                                <div class="micbuttonuser">
-                                  <i class="fa-solid fa-microphone" style="display:none"></i>
-                                  <i class="fa-solid fa-microphone-slash" style="float: right;"></i>
-                                </div>
-                                <div class="headphone-button" style="display:none">
-                                  <i class="fa-solid fa-headphones"></i>
-                                  <img src="../static/earphone.png"  class="fa-solid fa-earphones" style="width: 20px; height: 20px;" >
+                                <div class="flex-container">
+                                    <div class="micbuttonuser">
+                                        <span class="material-icons" style="display:none">
+                                            mic
+                                            </span>
+                                            <span class="material-icons">
+                                                mic_off
+                                                </span>
+                                    </div>
+                                    <div class="headphone-button" style="display:none">
+                                        <span class="material-icons">
+                                            headset
+                                            </span>
+                                      <span class="material-icons">
+                                        headset_off
+                                        </span>
+                                    </div>
+                                    <div class="statusscreen-background" style="display:none">
+                                            <span class="material-icons">
+                                                tv
+                                                </span>
+                                        </div>
                                 </div>
                         <!-- </div> -->
                             </div>
@@ -155,17 +180,32 @@
                             </span>
                         </div>
                     </div>
-                            <h4 class="username" style="opacity: 0.6;">優之介</h4>
+                            <h4 class="username">優之介</h4>
                             <div class="calendar" style="display:none">
                                 <i class="fa-solid fa-calendar-days"></i>
                             </div>
+                            <div class="flex-container">
                             <div class="micbuttonuser">
-                              <i class="fa-solid fa-microphone"></i>
-                              <i class="fa-solid fa-microphone-slash" style="display:none"></i>
+                                <span class="material-icons" style="display:none">
+                                    mic
+                                    </span>
+                                    <span class="material-icons">
+                                        mic_off
+                                        </span>
                             </div>
-                            <div class="headphone-button"style="opacity: 0.6;">
-                              <i class="fa-solid fa-headphones"  style="display:none"></i>
-                              <img src="../static/earphone.png"  class="fa-solid fa-earphones" style="width: 20px; height: 20px;" >
+                            <div class="headphone-button">
+                                <span class="material-icons" style="display: none;">
+                                    headset
+                                    </span>
+                              <span class="material-icons">
+                                headset_off
+                                </span>
+                            </div>
+                            <div class="statusscreen-background" style="display:none">
+                                    <span class="material-icons">
+                                        tv
+                                        </span>
+                                </div>
                             </div>
                     <!-- </div> -->
                 </div></li>
@@ -173,19 +213,33 @@
                     <!-- <div id="room-list" class="room-list"> -->
                         <div class="user" id="user">
                             <div class="logo-user button"><img src='../static/nekoavt.png'></div>
-                            <h4 class="username" style="opacity: 0.6;">わだ</h4>
+                            <h4 class="username">わだ</h4>
                             <div class="calendar" style="display:none">
                                 <i class="fa-solid fa-calendar-days"></i>
                             </div>
+                            <div class="flex-container">
                             <div class="micbuttonuser" style="display:none">
-                              <i class="fa-solid fa-microphone"></i>
-                              <i class="fa-solid fa-microphone-slash"></i>
+                                <span class="material-icons">
+                                    mic
+                                    </span>
+                                    <span class="material-icons">
+                                        mic_off
+                                        </span>
                             </div>
                             <div class="headphone-button" style="display:none">
-                              <i class="fa-solid fa-headphones"></i>
-                              <img src="../static/earphone.png"  class="fa-solid fa-earphones" style="width: 20px; height: 20px;" >
+                                <span class="material-icons" style="display: none;">
+                                    headset
+                                    </span>
+                              <span class="material-icons">
+                                headset_off
+                                </span>
                             </div>
-
+                            <div class="statusscreen-background" style="display:none">
+                                    <span class="material-icons">
+                                        tv
+                                        </span>
+                                </div>
+                            </div>
                     <!-- </div> -->
                 </div></li>
             </ul>
@@ -195,49 +249,77 @@
                 <svg class="svg-circle">
                   </svg>
                 </div></span>
-                <span class="general"></span><h4 class="button">DESIGNER</Datag></h4></span>
-                <span class="general"></span><div class="lock-keyhole" style="opacity: 0.6; display: none;"><i class="fa-solid fa-lock"></i></div></span>
+                <span class="general"></span><h4 class="button" style="color: black;">DESIGNER</Datag></h4></span>
+                <span class="general"></span><div class="lock-keyhole" style="display: none;"><i class="fa-solid fa-lock"></i></div></span>
         </div></li>
             <ul>
                 <li class="object">
                     <!-- <div id="room-list" class="room-list"> -->
                         <div class="user" id="user">
                             <div class="logo-user button"><img src='../static/nekoavt.png' style="border-width: 2px; border-style: solid; border-color: red;"></div>
-                            <h4 class="username" style="opacity: 0.6;">おのぎ</h4>
+                            <h4 class="username">おのぎ</h4>
                             <div class="calendar" style="display:none">
                                 <i class="fa-solid fa-calendar-days"></i>
                             </div>
+                            <div class="flex-container">
                             <div class="micbuttonuser" style="display:none">
-                              <i class="fa-solid fa-microphone"></i>
-                              <i class="fa-solid fa-microphone-slash"></i>
+                                <span class="material-icons">
+                                    mic
+                                    </span>
+                                    <span class="material-icons">
+                                        mic_off
+                                        </span>
                             </div>
-                            <div class="headphone-button" style="display:none">
-                              <i class="fa-solid fa-headphones"></i>
-                              <img src="../static/earphone.png"  class="fa-solid fa-earphones" style="width: 20px; height: 20px;" >
+                            <div class="headphone-button"style="display: none;">
+                                <span class="material-icons" >
+                                    headset
+                                    </span>
+                              <span class="material-icons">
+                                headset_off
+                                </span>
                             </div>
                             <div class="statusscreen-background">
-                                <i class="fa-solid fa-tv" id="screen-on"></i>
+                                <span class="material-icons">
+                                    tv
+                                    </span>
                             </div>
+                        </div>
                     <!-- </div> -->
                 </div></li>
                 <li class="object">
                     <!-- <div id="room-list" class="room-list"> -->
                         <div class="user" id="user">
                             <div class="logo-user button"><img src='../static/nekoavt.png' style="border-width: 2px; border-style: solid; border-color: red;"></div>
-                            <h4 class="username" style="opacity: 0.6;">りく</h4>
+                            <h4 class="username">りく</h4>
                             <div class="calendar" style="display:none">
                                 <i class="fa-solid fa-calendar-days"></i>
                             </div>
+                            <div class="flex-container">
                             <div class="micbuttonuser" style="display:none">
-                              <i class="fa-solid fa-microphone"></i>
-                              <i class="fa-solid fa-microphone-slash"></i>
+                                <span class="material-icons">
+                                    mic
+                                    </span>
+                                    <span class="material-icons">
+                                        mic_off
+                                        </span>
                             </div>
                             <div class="headphone-button" style="display:none">
-                              <i class="fa-solid fa-headphones"></i>
-                              <img src="../static/earphone.png"  class="fa-solid fa-earphones" style="width: 20px; height: 20px;" >
+                                <span class="material-icons" style="display: none;">
+                                    headset
+                                    </span>
+                              <span class="material-icons">
+                                headset_off
+                                </span>
                             </div>
+                            <div class="statusscreen-background" style="display:none">
+                                    <span class="material-icons">
+                                        tv
+                                        </span>
+                                    </div>
+                                </div>
                     <!-- </div> -->
-                </div></li>
+                </div>
+            </li>
                 <li class="object">
                     <!-- <div id="room-list" class="room-list"> -->
                     <div class="user" id="user">
@@ -246,17 +328,31 @@
                         </span>
                     </div>
                 </div>
-                        <h4 class="username">スガイリューマ</h4>
+                        <h4 class="username" style="color: black;">スガイリューマ</h4>
                         <div class="calendar" style="display:none">
                             <i class="fa-solid fa-calendar-days"></i>
                         </div>
+                        <div class="flex-container">
                         <div class="micbuttonuser">
-                          <i class="fa-solid fa-microphone"></i>
-                          <i class="fa-solid fa-microphone-slash" style="display:none"></i>
+                            <span class="material-icons" style="display:none">
+                                mic
+                                </span>
+                                <span class="material-icons">
+                                    mic_off
+                                    </span>
                         </div>
-                        <div class="headphone-button"style="opacity: 0.6;">
-                          <i class="fa-solid fa-headphones"  style="display:none"></i>
-                          <img src="../static/earphone.png"  class="fa-solid fa-earphones" style="width: 20px; height: 20px;" >
+                        <div class="headphone-button">
+                            <span class="material-icons" style="display: none;">
+                                headset
+                                </span>
+                            <span class="material-icons">
+                            headset_off
+                            </span>
+                        </div>
+                        <div class="statusscreen-background" style="display:none">
+                            <span class="material-icons">
+                                tv
+                                </span>
                         </div>
                 <!-- </div> -->
             </div></li>
@@ -264,11 +360,11 @@
             <li><div id="room">
                 <div class="header-room button" style="padding-top: 8px; padding-bottom:8px">
                 <span class="general"><div class="circle">
-                <svg class="svg-circle" style="background-color: grey;">
+                <svg class="svg-circle" style="background-color: rgb(109,113,131);">
                   </svg>
                 </div></span>
-                <span class="general"></span><h4 class="button" style="opacity: 0.6;">COFFE SPACE</h4></span>
-            <span class="general"></span><div class="lock-keyhole" style="opacity: 0.6; display: none;"><i class="fa-solid fa-lock"></i></div></span>
+                <span class="general"></span><h4 class="button">COFFE SPACE</h4></span>
+            <span class="general"></span><div class="lock-keyhole" style=" display: none;"><i class="fa-solid fa-lock"></i></div></span>
         </div></li>
             <ul>
             </ul>
@@ -278,27 +374,43 @@
                 <svg class="svg-circle">
                   </svg>
                 </div></span>
-                <span class="general"></span><h4 class="button" style="opacity: 0.6;">ZEN</h4></span>
-            <span class="general"></span><div class="lock-keyhole" style="opacity: 0.6; display: none;"><i class="fa-solid fa-lock"></i></div></span>
+                <span class="general"></span><h4 class="button">ZEN</h4></span>
+            <span class="general"></span><div class="lock-keyhole" style="display: none;"><i class="fa-solid fa-lock"></i></div></span>
         </div></li>
             <ul>
                 <li class="object">
                     <!-- <div id="room-list" class="room-list"> -->
                         <div class="user" id="user">
                             <div class="logo-user button"><img src='../static/nekoavt.png'></div>
-                            <h4 class="username" style="opacity: 0.6;">一番ヶ瀬</h4>
+                            <h4 class="username">一番ヶ瀬</h4>
                             <div class="calendar" style="display:none">
                                 <i class="fa-solid fa-calendar-days"></i>
                             </div>
+                            </div>
+                            <div class="flex-container">
                             <div class="micbuttonuser">
-                              <i class="fa-solid fa-microphone"style="display:none"></i>
-                              <i class="fa-solid fa-microphone-slash"></i>
+                                <span class="material-icons" style="display:none">
+                                    mic
+                                    </span>
+                                    <span class="material-icons">
+                                        mic_off
+                                        </span>
                             </div>
-                            <div class="headphone-button" style="display:none">
-                              <i class="fa-solid fa-headphones"></i>
-                              <img src="../static/earphone.png"  class="fa-solid fa-earphones" style="width: 20px; height: 20px;" >
+                            <div class="headphone-button"style="display: none;">
+                                <span class="material-icons" >
+                                    headset
+                                    </span>
+                              <span class="material-icons">
+                                headset_off
+                                </span>
                             </div>
-                        <!-- </div> -->
+                            <div class="statusscreen-background" style="display:none">
+                                    <span class="material-icons">
+                                        tv
+                                        </span>
+                                </div>
+                        </div>
+                    <!-- </div> -->
                 </div></li>
             </ul>
     </ul>
@@ -323,6 +435,10 @@
     </div>
         <div id="statusMicHeadphone" class="statusMicHeadphone">
             <div class="buttons">
+                <!-- <p id="status" onclick="showSelectStatus()"><span class="material-icons-round">
+                    外出中
+                    </span>
+                </p> -->
                 <p id="status" onclick="showSelectStatus()"><i class="fa-solid fa-person-running"> 外出中</i></p>
                 <div id="show-status" class="show-status">
                     <p onclick="changeStatusUser(0)">オフライン</p>
@@ -334,16 +450,25 @@
                 </div>
             </div>
             <div class="micbutton" onclick="changeStatusMic(0)">
-                <i class="fa-solid fa-microphone" id="mic-on" style="display: none;"></i>
-                <i class="fa-solid fa-microphone-slash" id="mic-off"></i>
+                <span class="material-icons" style="display: none;">
+                    mic
+                    </span>
+                    <span class="material-icons">
+                        mic_off
+                        </span>
             </div>
             <div class="headphonebutton" onclick="changeStatusSpeaker(0)">
-                <i class="fa-solid fa-headphones" id="speaker-on" style="display: none;" style=" width: 20px; height: 20px;"></i>
-                <img src="../static/earphone.png" class="fa-solid fa-earphones" id="speaker-off"
-                     style=" width: 20px; height: 20px;">
+                <span class="material-icons" style="display: none;">
+                    headset
+                    </span>
+              <span class="material-icons">
+                headset_off
+                </span>
             </div>
             <div class="screenbutton">
-                <i class="fa-solid fa-tv" id="screen-on"></i>
+                <span class="material-icons">
+                    tv
+                    </span>
             </div>
         </div>
         <div id="add-floor">

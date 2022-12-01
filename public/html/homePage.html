@@ -34,11 +34,31 @@
                 <i class="fa-solid fa-gear" ></i>
             </div>
         </div>
+        <!-- floor -->
+        <div class="floor">
+            <div class="barItem1">
+                <a>1F VOICHAT</a>
+            </div>
+            <div class="barItem2">
+                <a>1F M...</a>
+            </div>
+            <div class="barItem3">
+                <a>2F B...</a>
+            </div>
+            <!-- <button class="circleplus"> -->
+            <svg class="svg-circleplus" viewBox="0 0 100 100" onclick="openRoomCreate()">
+                <circle cx="50" cy="37" r="29" fill="none" stroke-width="6"></circle>
+                <line class="plus" x1="35.5" y1="38" x2="65.5" y2="38" stroke-width="6"></line>
+                <line class="plus" x1="50" y1="23.5" x2="50" y2="53.5" stroke-width="6"></line>
+              </svg>
+            <!-- </button> -->
+        </div>
+        <!-- end floor -->
         <div id="room-list" class="room-list">
             <div class="room" id="room">
             </div>
         </div>
-    <ul class="content">
+    <!-- <ul class="content">
         <li><div id="room">
             <div class="header-room button">
             <span class="general"><div class="circle">
@@ -51,15 +71,15 @@
         </div></li>
             <ul>
                 <li class="object">
-                    <!-- <div id="room-list" class="room-list"> -->
                         <div class="user" id="user">
-                            <div class="logo-user button"><img src='../static/nekoavt.png'></div>
+                            <div class="logo-userbutton"><img src='../static/nekoavt.png'></div>
                             <h4 class="username">小路康丸</h4>
                             <div class="calendar">
                                 <span class="material-icons">
                                     calendar_month
                                     </span>
                             </div>
+                        </div>
                             <div class="flex-container">
                             <div class="micbuttonuser" style="display:none">
                                 <span class="material-icons">
@@ -83,16 +103,15 @@
                                 </div>
                             </div>
                         </div>
-                    <!-- </div> -->
                 </div></li>
                 <li class="object">
-                    <!-- <div id="room-list" class="room-list"> -->
                         <div class="user" id="user">
-                            <div class="logo-user button"><img src='../static/nekoavt.png' style="border-width: 2px; border-style: solid; border-color: red;"></div>
+                            <div class="logo-userbutton"><img src='../static/nekoavt.png' style="border-width: 2px; border-style: solid; border-color: red;"></div>
                             <h4 class="username">てつ</h4>
                             <div class="calendar" style="display:none">
                                 <i class="fa-solid fa-calendar-days"></i>
                             </div>
+                        </div>
                             <div class="flex-container">
                             <div class="micbuttonuser" style="display:none">
                                 <span class="material-icons">
@@ -116,13 +135,12 @@
                                 </div>
                             </div>
                         </div>
-                    <!-- </div> -->
                 </div></li>
             </ul>
         <li><li><div id="room">
             <div class="header-room button" style="padding-top: 8px; padding-bottom:8px">
             <span class="general"><div class="circle">
-            <svg class="svg-circle" style="background-color: rgb(109,113,131);">
+            <svg class="svg-circle" style="background-color: rgb(193,195,205);">
               </svg>
             </div></span>
             <span class="general"></span><h4 class="button">DIRECTOR</h4></span>
@@ -141,11 +159,13 @@
         </div></li>
             <ul>
                 <li class="object">
-                    <!-- <div id="room-list" class="room-list"> -->
                             <div class="user" id="user">
-                                <div class="logo-user button"><img src='../static/nekoavt.png'></div>
+                                <div class="logo-userbutton"><img src='../static/nekoavt.png'></div>
                                 <h4 class="username">虎ロ</h4>
                                 </div>
+                            <div class="calendar" style="display:none">
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </div>
                                 <div class="flex-container">
                                     <div class="micbuttonuser">
                                         <span class="material-icons" style="display:none">
@@ -155,7 +175,7 @@
                                                 mic_off
                                                 </span>
                                     </div>
-                                    <div class="headphone-button" style="display:none">
+                                    <div class="headphone-button" style="display: none">
                                         <span class="material-icons">
                                             headset
                                             </span>
@@ -169,13 +189,11 @@
                                                 </span>
                                         </div>
                                 </div>
-                        <!-- </div> -->
-                            </div>
+                    </div>
                 </li>
                 <li class="object">
-                    <!-- <div id="room-list" class="room-list"> -->
                         <div class="user" id="user">
-                            <div class="logo-user button"><img src='../static/VN.jpg'>
+                            <div class="logo-userbutton"><img src='../static/VN.jpg'>
                             <div class="statuscalling-background"><span><i class="fa-solid fa-phone-volume" style="color: white;"></i>
                             </span>
                         </div>
@@ -207,16 +225,15 @@
                                         </span>
                                 </div>
                             </div>
-                    <!-- </div> -->
                 </div></li>
                 <li class="object">
-                    <!-- <div id="room-list" class="room-list"> -->
                         <div class="user" id="user">
-                            <div class="logo-user button"><img src='../static/nekoavt.png'></div>
+                            <div class="logo-userbutton"><img src='../static/nekoavt.png'></div>
                             <h4 class="username">わだ</h4>
                             <div class="calendar" style="display:none">
                                 <i class="fa-solid fa-calendar-days"></i>
                             </div>
+                        </div>
                             <div class="flex-container">
                             <div class="micbuttonuser" style="display:none">
                                 <span class="material-icons">
@@ -240,7 +257,6 @@
                                         </span>
                                 </div>
                             </div>
-                    <!-- </div> -->
                 </div></li>
             </ul>
             <li><div id="room">
@@ -254,13 +270,10 @@
         </div></li>
             <ul>
                 <li class="object">
-                    <!-- <div id="room-list" class="room-list"> -->
                         <div class="user" id="user">
-                            <div class="logo-user button"><img src='../static/nekoavt.png' style="border-width: 2px; border-style: solid; border-color: red;"></div>
+                            <div class="logo-userbutton"><img src='../static/nekoavt.png' style="border-width: 2px; border-style: solid; border-color: red;"></div>
                             <h4 class="username">おのぎ</h4>
-                            <div class="calendar" style="display:none">
-                                <i class="fa-solid fa-calendar-days"></i>
-                            </div>
+                        </div>
                             <div class="flex-container">
                             <div class="micbuttonuser" style="display:none">
                                 <span class="material-icons">
@@ -284,16 +297,16 @@
                                     </span>
                             </div>
                         </div>
-                    <!-- </div> -->
-                </div></li>
+                </div>
+            </li>
                 <li class="object">
-                    <!-- <div id="room-list" class="room-list"> -->
                         <div class="user" id="user">
-                            <div class="logo-user button"><img src='../static/nekoavt.png' style="border-width: 2px; border-style: solid; border-color: red;"></div>
+                            <div class="logo-userbutton"><img src='../static/nekoavt.png' style="border-width: 2px; border-style: solid; border-color: red;"></div>
                             <h4 class="username">りく</h4>
                             <div class="calendar" style="display:none">
                                 <i class="fa-solid fa-calendar-days"></i>
                             </div>
+                        </div>
                             <div class="flex-container">
                             <div class="micbuttonuser" style="display:none">
                                 <span class="material-icons">
@@ -317,13 +330,11 @@
                                         </span>
                                     </div>
                                 </div>
-                    <!-- </div> -->
                 </div>
             </li>
                 <li class="object">
-                    <!-- <div id="room-list" class="room-list"> -->
                     <div class="user" id="user">
-                        <div class="logo-user button"><img src='../static/VN.jpg'>
+                        <div class="logo-userbutton"><img src='../static/VN.jpg'>
                         <div class="statusexit-background"><span><i class="fa-solid fa-person-running" style="color: white;"></i>
                         </span>
                     </div>
@@ -354,13 +365,12 @@
                                 tv
                                 </span>
                         </div>
-                <!-- </div> -->
             </div></li>
             </ul>
             <li><div id="room">
                 <div class="header-room button" style="padding-top: 8px; padding-bottom:8px">
                 <span class="general"><div class="circle">
-                <svg class="svg-circle" style="background-color: rgb(109,113,131);">
+                <svg class="svg-circle" style="background-color: rgb(193,195,205);">
                   </svg>
                 </div></span>
                 <span class="general"></span><h4 class="button">COFFE SPACE</h4></span>
@@ -379,9 +389,8 @@
         </div></li>
             <ul>
                 <li class="object">
-                    <!-- <div id="room-list" class="room-list"> -->
                         <div class="user" id="user">
-                            <div class="logo-user button"><img src='../static/nekoavt.png'></div>
+                            <div class="logo-userbutton"><img src='../static/nekoavt.png'></div>
                             <h4 class="username">一番ヶ瀬</h4>
                             <div class="calendar" style="display:none">
                                 <i class="fa-solid fa-calendar-days"></i>
@@ -410,35 +419,11 @@
                                         </span>
                                 </div>
                         </div>
-                    <!-- </div> -->
                 </div></li>
             </ul>
-    </ul>
-
-    <div class="sub-header">
-        <div class="barItem1">
-            <a>1F VOICHAT</a>
-        </div>
-        <div class="barItem2">
-            <a>1F M...</a>
-        </div>
-        <div class="barItem3">
-            <a>2F B...</a>
-        </div>
-        <div class="circleplus">
-        <svg class="svg-circleplus" viewBox="0 0 100 100">
-            <circle cx="50" cy="37" r="29" fill="none" stroke-width="6"></circle>
-            <line class="plus" x1="35.5" y1="38" x2="65.5" y2="38" stroke-width="6"></line>
-            <line class="plus" x1="50" y1="23.5" x2="50" y2="53.5" stroke-width="6"></line>
-          </svg>
-        </div>
-    </div>
+    </ul> -->
         <div id="statusMicHeadphone" class="statusMicHeadphone">
-            <div class="buttons">
-                <!-- <p id="status" onclick="showSelectStatus()"><span class="material-icons-round">
-                    外出中
-                    </span>
-                </p> -->
+            <div class="statusbuttons">
                 <p id="status" onclick="showSelectStatus()"><i class="fa-solid fa-person-running"> 外出中</i></p>
                 <div id="show-status" class="show-status">
                     <p onclick="changeStatusUser(0)">オフライン</p>
@@ -471,8 +456,6 @@
                     </span>
             </div>
         </div>
-        <div id="add-floor">
-        </div>
         <div class="footer">
             <div class="Button"><img src="../static/VN.jpg">
                 <span class="Button-inner">
@@ -488,6 +471,6 @@
         </div>
     
     </body>
-<!-- <script src="../../dist/homePage.js"></script> -->
+<script src="../../dist/homePage.js"></script>
 <script src="../../dist/settings.js"></script>
 </html>

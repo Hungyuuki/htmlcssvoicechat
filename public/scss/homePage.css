@@ -93,18 +93,10 @@ body {
 }
 
 
-.buttons {
+.statusbuttons {
   padding: 10px 10px 10px;
 }
 
-/* .buttons button {
-  border-color: #d1cfcf;
-  border-radius: 5px;
-  position: absolute;
-  height: 30px;
-  left: 25px;
-  top: 50px;
-} */
 
 .logoheader img {
   display: block;
@@ -167,8 +159,8 @@ body {
 
 .room .lock-keyhole{
   display: inline-block;
-  position: absolute;
-  color: rgb(109,113,131);
+  /* color: rgb(109,113,131); */
+  color: black;
 }
 
 .header-room {
@@ -233,6 +225,8 @@ ul {
 .object .flex-container{
   margin-left: auto;
   color: rgb(193,195,205);
+  flex-wrap: nowrap;
+  display: flex;
 }
 
 
@@ -245,66 +239,53 @@ ul {
   top: 60px;
 }
 
-.statusexit-background {  
+.logo-userbutton .statusexit-background {  
     background: rgb(81, 190, 184);
     align-items: center;
     border-radius: 50%;
     height: 30px;
-    width: 20px;
+    width: 30px;
     position: absolute;
-    left: 40px;
-    bottom: 135px;
+    left: 15px;
+    bottom: 15px;
     border: 2px solid #fff;
     scale: 0.8;
     display: flex;
   }
-.statuscalling-background {  
+  .logo-userbutton .statuscalling-background {  
     background: #424ae4;
     align-items: center;
     border-radius: 50%;
     height: 30px;
-    width: 20px;
+    width: 30px;
     position: absolute;
-    left: 40px;
-    bottom: 345px;
+    left: 15px;
+    bottom: 15px;
     border: 2px solid #fff;
     scale: 0.8;
     display: flex;
     rotate: -30deg;
   }
-.statusscreen-background { 
-    color: white; 
+
+  .object .statusscreen-background { 
     background: rgb(252,76,86);
-    align-items: center;
     border-radius: 50%;
     height: 30px;
-    width: 20px;
-    position: absolute;
+    width: 30px;
     right: 0px;
-    bottom: 216px;
     scale: 0.8;
     display: flex;
   }
-/* .statusscreen-background span{
-    scale: 0.8;
+ .statusscreen-background .material-icons {
+    color: #ffffff; 
+    margin: auto;
+    scale: 0.9;
   }
-
-.statusexit-background span{
-    text-align: bottom;
-  } */
 
 .user * {
   width: 30px;
   text-align: center;
 }
-
-/* .user .btn {
-  background-color: #febdb5;
-  color: #ffffff;
-  border: 1px solid black;
-  border-radius: 3px;
-  width: 50px;
-} */
 
 .user h4 {
   width: 160px;
@@ -313,17 +294,19 @@ ul {
   color: rgb(109,113,131);
 }
 
-.user .logo-user{
+.user .logo-userbutton{
   width: 34px;
   height: 34px;
   border-radius: 10px;
+  position: relative;
 }
 
-.user .logo-user img{
+.user .logo-userbutton img{
   width: 30px;
   height: 30px;
-  border-radius: 8px;
+  border-radius: 10px;
 }
+
 .user .calendar{
   position: absolute;
   right: 110px;
@@ -333,22 +316,23 @@ ul {
 
 
 .user .micbuttonuser {
-  position: absolute; 
-  right: 30px;
   margin-left: auto;
   color: rgb(193,195,205);
   scale: 0.9;
+  margin: auto;
 }
 
 .user .headphone-button{
-  position: absolute;
-  right: 0px;
+  margin-left: auto;
   color: rgb(193,195,205);
   scale: 0.9;
+  margin: auto;
 }
 .user .screenbutton{
-  position: absolute;
-  right: -5px;
+  margin-left: auto;
+  right: 30px;
+  color: #ffffff; 
+  margin: auto;
 }
 
 
@@ -376,11 +360,15 @@ ul {
   width: 50px;
 }
 
-.footer .buttons {
+.footer .statusbuttons {
+  padding: 10px 10px 10px;
+}
+
+.footer .statusbuttons {
   width: 98px;
 }
 
-.footer .buttons button {
+.footer .statusbuttons button {
   width: 98px;
 }
 
@@ -523,20 +511,20 @@ button {
 }
 .micbutton{
   position: absolute;
-  right: 100px;
+  right: 90px;
   bottom: 10px;
   color: rgb(193,195,205);
 }
 .headphonebutton{
   position: absolute;
-  right: 60px;
+  right: 50px;
   bottom: 10px;
   color: rgb(193,195,205);
 }
 
 .screenbutton{
   position: absolute;
-  right: 15px;
+  right: 10px;
   bottom: 10px;
   color: rgb(193,195,205);
 }
@@ -560,7 +548,7 @@ button {
 }
 
 
-.sub-header {
+.floor {
   position:absolute;
   height: 45px;
   width: 290px;
@@ -602,7 +590,7 @@ button {
 .barItem3 a{
   background-color: rgb(238,238,238);
   position: absolute;
-  right: 48px;
+  right: 45px;
   top: 10px;
   border-radius: 15px 15px 15px 15px;
   padding: 5px;
@@ -613,12 +601,13 @@ button {
   color: rgb(109,113,131);
 }
 
+
 .svg-circleplus { 
   height: 40px;
   width: 40px;
   stroke: rgb(238,238,238);
   position: absolute;
-  right: 8px;
+  right: 4px;
   top: 8px;
 }
 .svg-circleplus .plus{

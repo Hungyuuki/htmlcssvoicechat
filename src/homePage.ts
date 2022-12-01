@@ -194,18 +194,47 @@ function getPageFloor(floor_id: any) {
                       displaySpeakerOff = "none"
                     }
                     let text = `
-                                            <div class="user" id="user-${resultUsers.room_users[0][j].user_id}">
-                                                <div class="logo-user button"><img src=${resultUsers.room_users[0][j].user_avatar}></div>
-                                                <h4 class="button">${resultUsers.room_users[0][j].user_name}</h4>
-                                                <div class="micbuttonuser" onclick="changeStatusMic(${resultUsers.room_users[0][j].user_id})">
-                                                  <i class="fa-solid fa-microphone" style="display: ${displayMicOn};" id="mic-on-${resultUsers.room_users[0][j].user_id}"></i>
-                                                  <i class="fa-solid fa-microphone-slash" id="mic-off-${resultUsers.room_users[0][j].user_id}" style="display: ${displayMicOff};"></i>
-                                                </div>
-                                                <div class="headphone button" onclick="changeStatusSpeaker(${resultUsers.room_users[0][j].user_id})">
-                                                  <i class="fa-solid fa-headphones" id="speaker-on-${resultUsers.room_users[0][j].user_id}" style="display: ${displaySpeakerOn};"></i>
-                                                  <img src="../static/earphone.png"  class="fa-solid fa-earphones" id="speaker-off-${resultUsers.room_users[0][j].user_id}" style="display: ${displaySpeakerOff}; width: 20px; height: 20px;" >
-                                                </div>
-                                            </div>
+
+
+
+
+
+
+                      <li class="object">
+                        <div class="user" id="user-${resultUsers.room_users[0][j].user_id}">
+                            <div class="logo-userbutton"><img src=${resultUsers.room_users[0][j].user_avatar}></div>
+                            <h4 class="username">${resultUsers.room_users[0][j].user_name}</h4>
+                            <div class="calendar">
+                                <span class="material-icons">
+                                    calendar_month
+                                    </span>
+                            </div>
+                        </div>
+                            <div class="flex-container">
+                              <div class="mic button user"style="display:none" onclick="changeStatusMic(${resultUsers.room_users[0][j].user_id})">
+                                <span class="material-icons" style="display: ${displayMicOn};" id="mic-on-${resultUsers.room_users[0][j].user_id}">
+                                    mic
+                                    </span>
+                                    <span class="material-icons" id="mic-off-${resultUsers.room_users[0][j].user_id}" style="display: ${displayMicOff};">
+                                        mic_off
+                                        </span>
+                                </div>
+                              <div class="headphone button" style="display:none" onclick="changeStatusSpeaker(${resultUsers.room_users[0][j].user_id});">
+                                <span class="material-icons" id="speaker-on-${resultUsers.room_users[0][j].user_id}" style="display: ${displaySpeakerOn};">
+                                    headset
+                                </span>
+                              <span class="material-icons">
+                                    headset_off
+                                </span>
+                              <div class="statusscreen-background" id="speaker-off-${resultUsers.room_users[0][j].user_id}" style="display: ${displaySpeakerOff};>
+                                <span class="material-icons">
+                                    tv
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
                                         `;
                     let userId = document.getElementById(`user-${resultUsers.room_users[0][j].user_id}`);
                     if (userId != null) {

@@ -51,14 +51,11 @@ body {
 }
 
 .header {
-  position: relative;
   margin-top: 20px;
   margin-bottom: 5px;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+
   padding-left: 10px;
-  z-index: -10;
   width: 290px;
   justify-content: space-between;
 }
@@ -66,7 +63,6 @@ body {
 .header .monolisix{
   font-weight: bold;
   font-size: large;
-  position: absolute;
   left: 55px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin-top: 10px;
@@ -104,23 +100,99 @@ body {
   max-height: 40px;
   width: auto;
   height: auto;
-  position: absolute;
-  top: 3px;
+
 }
 
-.settingbutton {
+.setting button{
   width: 16px;
   height: 16px;
-  position: absolute;
-  right: 10px;
-  top: 12px;
   color: rgb(193,195,205);
 };
 
+/* .floors */
+.floors {
+  background-color: #ff0000;
+  display: flex !important;
+  flex-direction: row !important;
+  width: 290px;
+  white-space: nowrap;
+  word-wrap: break-word;
+  /* display: -webkit-box; */
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.floor-list{
+  text-align: center;
+  justify-content: space-between;
+}
+.floor{
+  max-width: 50px;
+  height: 30px;
+  border-radius: 10px;
+  margin-right: 5px;
+  margin-left: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 0 auto;
+  padding: center;
+  justify-content: space-between;
+}
+.floor p{
+  text-align: center;
+  justify-content: space-between;
+}
+.floors .add {
+  margin-left: 275px;
+  font-weight: lighter;
+  height: 30px;
+  width: 15px;
+  padding-left: 3px;
+  border: 1px solid black;
+  border-radius: 0 0 5px 0;
+}
+
+.floors .add-new{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  stroke: rgb(238,238,238);
+  /* right: 4px;
+  top: 8px; */
+}
+
+.floors .add-new .plus{
+  stroke: rgb(109,113,131);
+}
+
+/*.floors p {
+  padding-left: 5px;
+  font-size: 15px;
+  color: #ffffff;
+  width: 15px;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+} */
+
+ /* .floor {
+  margin-left: 290px;
+  height: 70px;
+  width: 25px;
+  border: 0px solid white;
+  border-radius: 0 10px 10px 0;
+  text-align: center;
+  cursor: pointer;
+} */
+/* end .floor */
+
+
 .room-list {
   display: inline-block;
-  position: absolute;
-  top: 350px;
   margin-left: 10px;
   width: 290px;
   overflow-y: scroll;
@@ -180,7 +252,7 @@ body {
 .header-room .button {
   text-align: center;
   display: inline-block;
-  font-size: small;
+  font-size: normal;
   font-weight: 900;
   margin-left: 5px;
 }
@@ -547,72 +619,76 @@ button {
   color: rgb(193,195,205);
 }
 
-
-.floor {
-  position:absolute;
-  height: 45px;
+/* .floor-list{
+  position: relative;
+  height: 30px;
   width: 290px;
+  display: flex;
+  flex-direction: column;
+} */
+/* .floors {
+  height: 45px;
+  width: 450px;
   align-items: center;
-  top: 90px;
   background-color: rgb(255,255,255);
   display: flex;
-  text-align: justify;
   font-size: smaller;
   font-weight: 900;
+  display: inline-block;
+
 }
-.barItem1 a{
-  background-color: rgb(252,76,86);
-  position: absolute;
-  width: 110px;
-  left: 10px;
-  top: 10px;
-  color: white;
-  border-radius: 15px 15px 15px 15px;
-  padding: 5px;
+.floors .add {
+  margin-left: 275px;
+  font-weight: lighter;
+  height: 30px;
+  width: 15px;
+  padding-left: 3px;
+  border: 1px solid black; 
+  border-radius: 0 0 5px 0;
+}
+
+.floors .add-new{
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+
+}
+.floors .add-new .plus{
+  stroke: rgb(109,113,131);
+} 
+
+.floors p {
+  padding-left: 5px;
+  font-size: 15px;
+  color: #ffffff;
+  width: 15px;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+} */
+
+/* .floor {
   margin-left: 5px;
+  height: 30px;
+  width: 70px;
+  border: 0px solid white;
+  border-radius: 15px;
   text-align: center;
-  font-family: 'Arial', Helvetica, sans-serif;
-  font-weight: 600;
-}
-.barItem2 a{
-  background-color: rgb(238,238,238);
   position: absolute;
-  right: 106px;
-  top: 10px;
-  border-radius: 15px 15px 15px 15px;
-  padding: 5px;
-  margin-left: 5px;
-  width: 52px;
-  font-family: 'Arial', Helvetica, sans-serif;
-  font-weight: 600;
-  color: rgb(109,113,131);
-}
-.barItem3 a{
-  background-color: rgb(238,238,238);
-  position: absolute;
-  right: 45px;
-  top: 10px;
-  border-radius: 15px 15px 15px 15px;
-  padding: 5px;
-  margin-left: 5px;
-  width: 52px;
-  font-family: 'Arial', Helvetica, sans-serif;
-  font-weight: 600;
-  color: rgb(109,113,131);
-}
+  cursor: pointer;
+} */
 
 
-.svg-circleplus { 
-  height: 40px;
-  width: 40px;
+
+/* .floor .add-new { 
   stroke: rgb(238,238,238);
   position: absolute;
   right: 4px;
   top: 8px;
-}
-.svg-circleplus .plus{
-  stroke: rgb(109,113,131);
-}
+} */
+
 
 
 .Button {
@@ -830,9 +906,9 @@ input {
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
-  position: absolute;
-  right: 115px;
-  top: 14px;
+  /* position: absolute; */
+  /* right: 115px;
+  top: 14px; */
 }
 .down {
   transform: rotate(45deg);

@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../scss/homePage.css">
+    <link rel="stylesheet" href="../scss/re.css">
     <link rel="stylesheet" href="../scss/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
@@ -19,9 +20,6 @@
         <div class="minimize" onclick="minimizeWindown()"></div>
         <div class="pin" onclick="pinWindown()"></div>
     </div>
-            </div>
-        </div>
-    </div>
     <div class="header">
         <div class="logoheader button"><img src="../static/monolisix.png"></div>
         <div>
@@ -30,34 +28,28 @@
         <div>
             <i class="arrow down"></i>
         </div>
-            <div class="settingbutton" id="settingbutton" onclick="settingForm()">
+            <div class="setting button" id="setting button" onclick="settingForm()">
                 <i class="fa-solid fa-gear" ></i>
             </div>
         </div>
-        <!-- floor -->
-        <div class="floor">
-            <div class="barItem1">
-                <a>1F VOICHAT</a>
-            </div>
-            <div class="barItem2">
-                <a>1F M...</a>
-            </div>
-            <div class="barItem3">
-                <a>2F B...</a>
-            </div>
-            <!-- <button class="circleplus"> -->
-            <svg class="svg-circleplus" viewBox="0 0 100 100" onclick="openRoomCreate()">
-                <circle cx="50" cy="37" r="29" fill="none" stroke-width="6"></circle>
-                <line class="plus" x1="35.5" y1="38" x2="65.5" y2="38" stroke-width="6"></line>
-                <line class="plus" x1="50" y1="23.5" x2="50" y2="53.5" stroke-width="6"></line>
-              </svg>
-            <!-- </button> -->
+        <!-- begin floor -->
+        <div class="floor-list" id="floor-list"> 
+        <!-- <div class="floor" id="floor"> -->
+                <!-- <svg class="floors add-new" viewBox="0 0 100 100" style="width: 20px; height: 20px" onclick="addFloor()">
+                    <circle cx="50" cy="37" r="29" fill="none" stroke-width="6"></circle>
+                    <line class="plus" x1="35.5" y1="38" x2="65.5" y2="38" stroke-width="6"></line>
+                    <line class="plus" x1="50" y1="23.5" x2="50" y2="53.5" stroke-width="6"></line>
+                  </svg> -->
+            <!-- </div> -->
         </div>
         <!-- end floor -->
+    <div id="add-floor"></div>
+        <!-- floor -->
         <div id="room-list" class="room-list">
             <div class="room" id="room">
             </div>
         </div>
+
     <!-- <ul class="content">
         <li><div id="room">
             <div class="header-room button">

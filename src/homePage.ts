@@ -120,7 +120,7 @@ function getPageFloor(floor_id: any) {
             deleteElement("room");
             deleteElement("floors");
             deleteElement("userProfile");
-            let elFloors = ` <div class="floors" id="floors" height=1400> </div>`;
+            let elFloors = ` <div class="floors" style='display: flex;' id="floors" height=1400> </div>`;
             addElement(elFloors, "floor-list");
             let elRooms = `<div class="room" id="room"> </div>`;
             addElement(elRooms, "room-list");
@@ -132,19 +132,25 @@ function getPageFloor(floor_id: any) {
                   floor_id: res.floors[0][floor_id].id,
                 });
                 let elFloors = `
-                                    <div class="floor" style="top: ${position_px}px; background-color: #7f7f7f; z-index: 1000;" id=${k} onclick="showFloor(${res.floors[0][k].id})" > <p>${res.floors[0][k].name} </p></div>
+                                    <div class="floor" style="text-align: center; background-color: rgb(252,76,86); min-width: 80px; margin-right: 5px; margin-right: 5px; margin-left: 5px;
+                                  width: 70px; color: white;" id=${k} onclick="showFloor(${res.floors[0][k].id})" > <p>${res.floors[0][k].name} </p></div>
                                 `;
                 addElement(elFloors, "floors");
               } else {
                 index += 1;
                 let elFloors = `
-                                    <div class="floor" style="top: ${position_px}px; background-color: #dbdbdb;z-index: ${index};" id=${k} onclick="showFloor(${res.floors[0][k].id})" > <p>${res.floors[0][k].name} </p></div>
+                                    <div class="floor" style="color: rgb(109,113,131); overflow: hidden; width: 60px; white-space: nowrap; text-align: center; margin-right: 5px;
+                                    text-overflow: ellipsis; background-color: rgb(238,238,238); z-index: ${index};" id=${k} onclick="showFloor(${res.floors[0][k].id})"> <p>${res.floors[0][k].name} </p></div>
                                 `;
                 addElement(elFloors, "floors");
               }
-              position_px += 60;
+              // position_px += 60;
             }
-            let elButtonAdd = `<div class="floor add-new" style="top: ${position_px}px; background-color: black; z-index: -1;" onclick="addFloor()"><p>+</p></div>`;
+            let elButtonAdd = `<svg class="floors add-new" viewBox="0 0 100 100" style="width: 40px; height: 40px" onclick="addFloor()">
+            <circle cx="50" cy="37" r="29" fill="none" stroke-width="6"></circle>
+            <line class="plus" x1="35.5" y1="38" x2="65.5" y2="38" stroke-width="6"></line>
+            <line class="plus" x1="50" y1="23.5" x2="50" y2="53.5" stroke-width="6"></line>
+          </svg>`;
             addElement(elButtonAdd, "floors");
             for (let i = 0; i < result.rooms[0].length; i++) {
               let elRoom = `
@@ -194,12 +200,6 @@ function getPageFloor(floor_id: any) {
                       displaySpeakerOff = "none"
                     }
                     let text = `
-
-
-
-
-
-
                       <li class="object">
                         <div class="user" id="user-${resultUsers.room_users[0][j].user_id}">
                             <div class="logo-userbutton"><img src=${resultUsers.room_users[0][j].user_avatar}></div>

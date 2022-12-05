@@ -83,6 +83,10 @@ window.api
   .store("Get", "floor_id")
   .then(function (floor_id: number | string) {
     getPageFloor(floor_id ?? 0);
+    window.api.store('Get', 'userName')
+    .then((userName: any)=> {
+      document.getElementById("username").innerHTML = userName;
+    })
   })
   .catch(function (floor_id: any) { });
 
@@ -120,7 +124,7 @@ function getPageFloor(floor_id: any) {
             deleteElement("room");
             deleteElement("floors");
             deleteElement("userProfile");
-            let elFloors = ` <div class="floors" style='display: flex;' id="floors" height=1400> </div>`;
+            let elFloors = ` <div class="floors" style='display: flex; overflow-x: auto;' id="floors" height=1400> </div>`;
             addElement(elFloors, "floor-list");
             let elRooms = `<div class="room" id="room"> </div>`;
             addElement(elRooms, "room-list");
@@ -132,21 +136,20 @@ function getPageFloor(floor_id: any) {
                   floor_id: res.floors[0][floor_id].id,
                 });
                 let elFloors = `
-                                    <div class="floor" style="text-align: center; background-color: rgb(252,76,86); min-width: 80px; margin-right: 5px; margin-right: 5px; margin-left: 5px;
-                                  width: 70px; color: white;" id=${k} onclick="showFloor(${res.floors[0][k].id})" > <p>${res.floors[0][k].name} </p></div>
+                                    <div class="floor" style=" background-color: rgb(252,76,86); text-align:center; min-width: 80px; margin-right: 5px; margin-right: 5px; margin-left: 5px; overflow-x: auto;
+                                    padding-top:7px; width: 70px; color: white;" id=${k} onclick="showFloor(${res.floors[0][k].id})"> <p style="align-items: center">${res.floors[0][k].name} </p></div>
                                 `;
                 addElement(elFloors, "floors");
               } else {
                 index += 1;
                 let elFloors = `
-                                    <div class="floor" style="color: rgb(109,113,131); overflow: hidden; width: 60px; white-space: nowrap; text-align: center; margin-right: 5px;
-                                    text-overflow: ellipsis; background-color: rgb(238,238,238); z-index: ${index};" id=${k} onclick="showFloor(${res.floors[0][k].id})"> <p>${res.floors[0][k].name} </p></div>
+                                    <div class="floor" style="color: rgb(109,113,131); text-align:center; width: 60px; white-space: nowrap; margin-right: 5px; margin-left: 5px; overflow-x: auto;
+                                    padding-top:7px; text-overflow: ellipsis; background-color: rgb(238,238,238); z-index: ${index};" id=${k} onclick="showFloor(${res.floors[0][k].id})"> <p style="align-items: center">${res.floors[0][k].name} </p></div>
                                 `;
                 addElement(elFloors, "floors");
               }
-              // position_px += 60;
             }
-            let elButtonAdd = `<svg class="floors add-new" viewBox="0 0 100 100" style="width: 40px; height: 40px" onclick="addFloor()">
+            let elButtonAdd = `<svg class="floors add-new" viewBox="0 0 100 100" style="width: 40px; height: 40px; background-color: rgb(255,255,255);" onclick="addFloor()">
             <circle cx="50" cy="37" r="29" fill="none" stroke-width="6"></circle>
             <line class="plus" x1="35.5" y1="38" x2="65.5" y2="38" stroke-width="6"></line>
             <line class="plus" x1="50" y1="23.5" x2="50" y2="53.5" stroke-width="6"></line>
@@ -211,26 +214,22 @@ function getPageFloor(floor_id: any) {
                             </div>
                         </div>
                             <div class="flex-container">
-                              <div class="mic button user"style="display:none" onclick="changeStatusMic(${resultUsers.room_users[0][j].user_id})">
-                                <span class="material-icons" style="display: ${displayMicOn};" id="mic-on-${resultUsers.room_users[0][j].user_id}">
+                              <div class="mic button" onclick="changeStatusMic(${resultUsers.room_users[0][j].user_id})">
+                                <span class="material-icons" id="mic-on-${resultUsers.room_users[0][j].user_id}" style="display: ${displayMicOn};">
                                     mic
                                     </span>
                                     <span class="material-icons" id="mic-off-${resultUsers.room_users[0][j].user_id}" style="display: ${displayMicOff};">
                                         mic_off
                                         </span>
                                 </div>
-                              <div class="headphone button" style="display:none" onclick="changeStatusSpeaker(${resultUsers.room_users[0][j].user_id});">
+                              <div class="headphone button" onclick="changeStatusSpeaker(${resultUsers.room_users[0][j].user_id});">
                                 <span class="material-icons" id="speaker-on-${resultUsers.room_users[0][j].user_id}" style="display: ${displaySpeakerOn};">
                                     headset
                                 </span>
-                              <span class="material-icons">
+                              <span class="material-icons" id="speaker-off-${resultUsers.room_users[0][j].user_id}" style="display: ${displaySpeakerOff};>
                                     headset_off
                                 </span>
-                              <div class="statusscreen-background" id="speaker-off-${resultUsers.room_users[0][j].user_id}" style="display: ${displaySpeakerOff};>
-                                <span class="material-icons">
-                                    tv
-                                </span>
-                              </div>
+                                </div>
                             </div>
                           </div>
                         </div>
@@ -269,7 +268,7 @@ function addFloor() {
     let text = `
             <div class="add" id="add">
             <p>フロア名</p>
-            <div class="input" > <input type="text" id="input"> </div>
+            <div class="input"> <input type="text" id="input"> </div>
             <div class="btn">
                 <button class="cancel" onclick="cancelCreate()">キャンセル</button>
                 <button class="confirm" onclick="confirmCreate()">追加</button>
@@ -657,3 +656,4 @@ placeholder.addEventListener('click', function() {
         dropdown.classList.add('active')
     }
 })
+

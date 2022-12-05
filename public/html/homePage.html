@@ -28,19 +28,13 @@
         <div>
             <i class="arrow down"></i>
         </div>
-            <div class="setting button" id="setting button" onclick="settingForm()">
+            <div class="setting button" style="color: rgb(193,195,205); width: 20px; height: 20px; position: relative; right: 9px; margin-left: auto;" id="setting button" onclick="settingForm()">
                 <i class="fa-solid fa-gear" ></i>
             </div>
         </div>
         <!-- begin floor -->
         <div class="floor-list" id="floor-list"> 
-        <!-- <div class="floor" id="floor"> -->
-                <!-- <svg class="floors add-new" viewBox="0 0 100 100" style="width: 20px; height: 20px" onclick="addFloor()">
-                    <circle cx="50" cy="37" r="29" fill="none" stroke-width="6"></circle>
-                    <line class="plus" x1="35.5" y1="38" x2="65.5" y2="38" stroke-width="6"></line>
-                    <line class="plus" x1="50" y1="23.5" x2="50" y2="53.5" stroke-width="6"></line>
-                  </svg> -->
-            <!-- </div> -->
+            <div id="add-floor"></div>
         </div>
         <!-- end floor -->
     <div id="add-floor"></div>
@@ -415,8 +409,8 @@
             </ul>
     </ul> -->
         <div id="statusMicHeadphone" class="statusMicHeadphone">
-            <div class="statusbuttons">
-                <p id="status" onclick="showSelectStatus()"><i class="fa-solid fa-person-running"> 外出中</i></p>
+            <div class="buttons">
+                <button id="status" onclick="showSelectStatus()"><i class="fa-solid fa-person-running">ステータス</i></button>
                 <div id="show-status" class="show-status">
                     <p onclick="changeStatusUser(0)">オフライン</p>
                     <p onclick="changeStatusUser(1)">オンライン中</p>
@@ -449,12 +443,12 @@
             </div>
         </div>
         <div class="footer">
-            <div class="Button"><img src="../static/VN.jpg">
+            <div class="logo"><img id="currentAvatar">
                 <span class="Button-inner">
                     デザイナー
                 </span>
                 <span class="Badge">
-                  <p>スガイリューマ</p> 
+                  <h3 id="username"></h3> 
                 </span>
             </div>
             <div class="exitbutton" onclick="window.api.invoke('leaveRoom')">

@@ -178,14 +178,14 @@ function getPageFloor(floor_id: any) {
                   result.rooms[0][i].room_id
                 )
                 .then(function (resultUsers: any) {
-                  let listStatusUser = ["オフライン", "オンライン中", "多忙中", "離席中", "電話中", "休憩中"];
+                  let listStatusUser = ['../static/offline.png', '../static/online.png', '../static/busy.png', '../static/leaving.png', '../static/calling1.png', '../static/sleeping.png'];
                   let colorStatus = ["gray", "green", "#5d0b0b", "#b5c014", "#911258", "orange"];
                   let colorBackroundStatus;
                   for (let j = 0; j < resultUsers.room_users[0].length; j++) {
                     for (let k = 0; k < 6; k++) {
                       if (resultUsers.room_users[0][j].user_login_status == k) {
                         resultUsers.room_users[0][j].user_login_status = listStatusUser[k];
-                        colorBackroundStatus = colorStatus[k]
+                        colorBackroundStatus = colorStatus[k];
                         break;
                       }
                     }
@@ -193,19 +193,22 @@ function getPageFloor(floor_id: any) {
                     let displayMicOff = "inline";
                     if (resultUsers.room_users[0][j].user_is_mic == '1') {
                       displayMicOn = "inline";
-                      displayMicOff = "none"
+                      displayMicOff = "none";
                     }
           
                     let displaySpeakerOn = "none";
                     let displaySpeakerOff = "inline";
                     if (resultUsers.room_users[0][j].user_is_speaker == '1') {
                       displaySpeakerOn = "inline";
-                      displaySpeakerOff = "none"
+                      displaySpeakerOff = "none";
                     }
                     let text = `
                       <li class="object">
                         <div class="user" id="user-${resultUsers.room_users[0][j].user_id}">
                             <div class="logo-userbutton"><img src=${resultUsers.room_users[0][j].user_avatar}></div>
+                            <div class="status-users" style="background-color: ${colorBackroundStatus}">
+                              <img src="${resultUsers.room_users[0][j].user_login_status}" />
+                            </div>
                             <h4 class="username">${resultUsers.room_users[0][j].user_name}</h4>
                             <div class="calendar">
                                 <span class="material-icons">

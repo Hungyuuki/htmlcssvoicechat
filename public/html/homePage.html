@@ -37,13 +37,13 @@
             <div id="add-floor"></div>
         </div>
         <!-- end floor -->
-    <div id="add-floor"></div>
-        <!-- floor -->
+    <!-- <div id="add-floor"></div> -->
+        <!-- begin room -->
         <div id="room-list" class="room-list">
             <div class="room" id="room">
             </div>
         </div>
-
+        <!-- end room -->
     <!-- <ul class="content">
         <li><div id="room">
             <div class="header-room button">
@@ -410,7 +410,7 @@
     </ul> -->
         <div id="statusMicHeadphone" class="statusMicHeadphone">
             <div class="buttons">
-                <button id="status" onclick="showSelectStatus()"><i class="fa-solid fa-person-running">ステータス</i></button>
+                <button id="status" onclick="showSelectStatus()"><i class="fa-solid fa-person-running"></i>ステータス</button>
                 <div id="show-status" class="show-status">
                     <p onclick="changeStatusUser(0)">オフライン</p>
                     <p onclick="changeStatusUser(1)">オンライン中</p>
@@ -420,28 +420,30 @@
                     <p onclick="changeStatusUser(5)">休憩中</p>
                 </div>
             </div>
-            <div class="micbutton" onclick="changeStatusMic(0)">
+            <div class="flex-micheadscreen">
+            <div class="mic button" onclick="changeStatusMic(0)">
                 <span class="material-icons" style="display: none;">
                     mic
                     </span>
-                    <span class="material-icons">
-                        mic_off
-                        </span>
+                <span class="material-icons">
+                    mic_off
+                </span>
             </div>
-            <div class="headphonebutton" onclick="changeStatusSpeaker(0)">
+            <div class="headphone button" onclick="changeStatusSpeaker(0)">
                 <span class="material-icons" style="display: none;">
                     headset
                     </span>
-              <span class="material-icons">
-                headset_off
+                <span class="material-icons">
+                    headset_off
                 </span>
             </div>
-            <div class="screenbutton">
+            <div class="screen button">
                 <span class="material-icons">
                     tv
                     </span>
             </div>
         </div>
+    </div>
         <div class="footer">
             <div class="logo"><img id="currentAvatar">
                 <span class="Button-inner">

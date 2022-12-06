@@ -84,15 +84,16 @@ body {
   margin-top: 0px;
   padding-left: 10px;
 }
-
+/* 
 .buttons {
   padding: 10px 10px 10px;
-}
+} */
 
 .buttons button{
   border-color: #d1cfcf;
   border-radius: 5px;
   height: 30px;
+  font-weight: 900;
 }
 
 .logoheader img {
@@ -101,6 +102,7 @@ body {
   max-height: 40px;
   width: auto;
   height: auto;
+
 }
 
 .header .setting .button{
@@ -110,12 +112,13 @@ body {
 };
 
 /* .floors */
-.floors {
+#floors {
   width: 300px;
   white-space: nowrap;
   word-wrap: break-word;
   -webkit-box-orient: horizontal;
   margin-right: 5px;
+  display: flex;
 }
 /* Ẩn thanh scroll nhưng vẫn cuộn được */
 .floors::-webkit-scrollbar { 
@@ -239,6 +242,7 @@ body {
   background-color: rgb(255,255,255);
   padding-left: 10px;
   color: rgb(109,113,131);
+  margin-bottom: 5px;
 }
 
 .header-room i {
@@ -250,6 +254,8 @@ body {
   font-size: normal;
   font-weight: 900;
   margin-left: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 
@@ -307,34 +313,29 @@ ul {
   margin-top: 5px;
   top: 60px;
 }
+.status-users {
+  border: 1px solid #d9d9d9;
+  width: 30px;
+  height: 30px;
+  font-size: 10px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  right: 15px;
+  bottom: 15px;
+  border: 3px solid #fff;
+  scale: 0.9;
+}
 
-.logo-userbutton .statusexit-background {  
-    background: rgb(81, 190, 184);
-    align-items: center;
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-    position: absolute;
-    left: 15px;
-    bottom: 15px;
-    border: 2px solid #fff;
-    scale: 0.8;
-    display: flex;
-  }
-  .logo-userbutton .statuscalling-background {  
-    background: #424ae4;
-    align-items: center;
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-    position: absolute;
-    left: 15px;
-    bottom: 15px;
-    border: 2px solid #fff;
-    scale: 0.8;
-    display: flex;
-    rotate: -30deg;
-  }
+.status-users img {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+}
 
   .object .statusscreen-background { 
     background: rgb(252,76,86);
@@ -360,7 +361,6 @@ ul {
 .user h4 {
   width: 160px;
   text-align: left;
-  margin-left: 10px;
   color: rgb(109,113,131);
 }
 
@@ -368,13 +368,15 @@ ul {
   width: 34px;
   height: 34px;
   border-radius: 10px;
-  position: relative;
+  vertical-align: middle;
 }
 
 .user .logo-userbutton img{
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
   border-radius: 10px;
+  text-align: center;
+  vertical-align: baseline;
 }
 
 .user .calendar{
@@ -430,7 +432,7 @@ ul {
   width: 50px;
 }
 
-.footer .buttons {
+/* .footer .buttons {
   padding: 10px 10px 10px;
 }
 
@@ -440,7 +442,7 @@ ul {
 
 .footer .buttons button {
   width: 98px;
-}
+} */
 
 .add {
   position: absolute;
@@ -516,38 +518,28 @@ button {
 
 .show-status {
   display: none;
+  position: absolute;
+  bottom: 40px;
   background-color: #f1f1f1;
-  min-width: 98px;
-  border-radius: 10px;
+  min-width: 100px;
+  border-radius: 15px;
   border: 1px solid #d9d9d9;
   z-index: 1;
+  align-items: center;
 }
 
 .show-status p {
   width: 95px;
   height: 20px;
-  text-align: left;
-  padding-left: 5px;
+  text-align: center;
   cursor: pointer;
   font-size: 14px;
+  border-left: 5px;
+  margin: 14px 0px;
 }
 
 .show-status p:hover {
   background-color: #d9d9d9;
-}
-
-.status-users {
-  border: 1px solid #d9d9d9;
-  width: 70px;
-  height: 32px;
-  font-size: 11px;
-  margin-left: -10px;
-  border-radius: 5px;
-  color: white;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
 }
 
 #status {
@@ -555,8 +547,10 @@ button {
   background-color: rgb(81, 190, 184);
   border: none;
   color: white;
+  border-radius: 10px;
+  width: 100px;
+  align-items: center;
 }
-
 
 .statusMicHeadphone {
   position:absolute;
@@ -565,40 +559,43 @@ button {
   align-items: center;
   background-color: rgb(255,255,255);
   bottom: 70px;
+  display: flex;
 }
-.statusMicHeadphone p{
-  position: absolute;
-  right: -120px;
-  bottom: -30px;
-  background-color: rgb(81, 190, 184);
-  color: white;
-  width: 105px;
-  height: 35px;
+
+.flex-micheadscreen{
+  display: flex;
+  align-items: center;
+  width: 150px;
   text-align: center;
-  border-radius: 8px;
-  padding-top: 10px;
-  font-weight: thin;
 }
-.micbutton{
-  position: absolute;
-  right: 90px;
-  bottom: 10px;
+.flex-micheadscreen div{
+  display: flex;
+  align-items: center;
   color: rgb(193,195,205);
+  text-align: center;
 }
-.headphonebutton{
+.buttons {
+  padding: 10px 10px 10px 15px;
+  width: 150px;
+}
+
+.flex-micheadscreen .mic{
   position: absolute;
+  width: 30px;
+  right: 100px;
+}
+
+.flex-micheadscreen .headphone{
+  position: absolute;
+  width: 30px;
   right: 50px;
-  bottom: 10px;
-  color: rgb(193,195,205);
 }
 
-.screenbutton{
+.flex-micheadscreen .screen{
   position: absolute;
-  right: 10px;
-  bottom: 10px;
-  color: rgb(193,195,205);
+  width: 30px;
+  right: 0px;
 }
-
 
 .status{
   position: absolute;
@@ -617,87 +614,15 @@ button {
   color: rgb(193,195,205);
 }
 
-/* .floor-list{
-  position: relative;
-  height: 30px;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-} */
-/* .floors {
-  height: 45px;
-  width: 450px;
-  align-items: center;
-  background-color: rgb(255,255,255);
-  display: flex;
-  font-size: smaller;
-  font-weight: 900;
-  display: inline-block;
-
-}
-.floors .add {
-  margin-left: 275px;
-  font-weight: lighter;
-  height: 30px;
-  width: 15px;
-  padding-left: 3px;
-  border: 1px solid black; 
-  border-radius: 0 0 5px 0;
-}
-
-.floors .add-new{
-  height: 30px;
-  width: 30px;
-  cursor: pointer;
-
-}
-.floors .add-new .plus{
-  stroke: rgb(109,113,131);
-} 
-
-.floors p {
-  padding-left: 5px;
-  font-size: 15px;
-  color: #ffffff;
-  width: 15px;
-  word-wrap: break-word;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-} */
-
-/* .floor {
-  margin-left: 5px;
-  height: 30px;
-  width: 70px;
-  border: 0px solid white;
-  border-radius: 15px;
-  text-align: center;
-  position: absolute;
-  cursor: pointer;
-} */
-
-
-
-/* .floor .add-new { 
-  stroke: rgb(238,238,238);
-  position: absolute;
-  right: 4px;
-  top: 8px;
-} */
-
-
-
-.logo button .currentAvatar {
+.logo #currentAvatar {
   background-color: grey;
   border: 0;
-  border-radius: 10px;
+  border-radius: 15px;
   color: inherit;
   display: inline-block;
   font: inherit;
-  width: 40px;
-  height: 40px;
+  /* width: 40px;
+  height: 40px; */
   line-height: 1;
   margin: 0;
   padding: 0;
@@ -706,20 +631,20 @@ button {
   text-decoration: none;
   user-select: none;
 }
-.logo button .currentAvatar img{
-  border-radius: 5px;
+.logo #currentAvatar img{
+  border-radius: 15px;
   height: 40px;
   width: 40px;
   margin-right: 10px;
 }
 
-.logo button .currentAvatar:focus {
+/* .logo button .currentAvatar:focus {
   outline: none;
 }
 
 .logo button .currentAvatar::-moz-focus-inner {
   border: 0;
-}
+} */
 
 .Button-inner {
   align-items: center;
@@ -756,7 +681,7 @@ button {
 
 .Badge {
   align-items: center;
-  background: #ce2c6c;
+  background: #ff5297;
   border: 2px solid #fff;
   border-radius: 99em;
   color: black;
@@ -906,7 +831,7 @@ input {
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
-
+  margin: 5px;
 }
 .down {
   transform: rotate(45deg);

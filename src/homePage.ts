@@ -89,7 +89,6 @@ window.api
     })
   })
   .catch(function (floor_id: any) { });
-
 window.api
   .store("Get", "company_id")
   .then(function (company_id: any) {
@@ -178,14 +177,16 @@ function getPageFloor(floor_id: any) {
                   result.rooms[0][i].room_id
                 )
                 .then(function (resultUsers: any) {
-                  let listStatusUser = ['../static/offline.png', '../static/online.png', '../static/busy.png', '../static/leaving.png', '../static/calling1.png', '../static/sleeping.png'];
+                  let listStatusUserIcon = ['../static/offline1.png', '../static/online1.png', '../static/busy1.png', '../static/leaving1.png', '../static/calling1.png', '../static/sleeping1.png'];
                   let colorStatus = ["gray", "green", "#5d0b0b", "#b5c014", "#911258", "orange"];
                   let colorBackroundStatus;
+                  let listStatusUser = ['オフライン','オンライン中','多忙中','離席中','電話中','休憩中'];
                   for (let j = 0; j < resultUsers.room_users[0].length; j++) {
                     for (let k = 0; k < 6; k++) {
                       if (resultUsers.room_users[0][j].user_login_status == k) {
-                        resultUsers.room_users[0][j].user_login_status = listStatusUser[k];
+                        resultUsers.room_users[0][j].user_login_status = listStatusUserIcon[k];
                         colorBackroundStatus = colorStatus[k];
+                        document.getElementById('statusContent').innerHTML = listStatusUser[k];
                         break;
                       }
                     }
@@ -207,7 +208,7 @@ function getPageFloor(floor_id: any) {
                         <div class="user" id="user-${resultUsers.room_users[0][j].user_id}">
                             <div class="logo-userbutton"><img src=${resultUsers.room_users[0][j].user_avatar}></div>
                             <div class="status-users" style="background-color: ${colorBackroundStatus}">
-                              <img src="${resultUsers.room_users[0][j].user_login_status}" />
+                              <img src="${resultUsers.room_users[0][j].user_login_status}">
                             </div>
                             <h4 class="username">${resultUsers.room_users[0][j].user_name}</h4>
                             <div class="calendar">
@@ -613,7 +614,6 @@ function showSelectStatus() {
   let showStatus = document.getElementById("show-status");
   showStatus.style.display = "block";
 }
-
 window.onload = function () {
   let showStatus = document.getElementById("show-status");
   document.onclick = function (element: any) {
@@ -631,11 +631,15 @@ function changeStatusUser(idStatus: any) {
   window.api
     .invoke("change-login-status", data)
     .then(function (res: any) {
-      showFloor(localStorage.getItem("floorId"))
+      showFloor(localStorage.getItem("floorId"));
+      document.getElementById('statusContent').innerHTML = '';
+      let listStatusUserIcon = ['../static/offline1.png', '../static/online1.png', '../static/busy1.png', '../static/leaving1.png', '../static/calling1.png', '../static/sleeping1.png'];
+      const ele = document.getElementById('statusIcon') as HTMLElement;
+      ele?.setAttribute('src', listStatusUserIcon[idStatus])
     })
     .catch(function (err: any) {
     });
-}
+  }
 
 async function Init() {
   let avatar = await window.api.invoke('getCurrentAvatar')

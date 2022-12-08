@@ -84,10 +84,20 @@ body {
   margin-top: 0px;
   padding-left: 10px;
 }
-/* 
-.buttons {
-  padding: 10px 10px 10px;
-} */
+
+.remove-floor {
+  border-radius: 100%;
+  border: 1px solid transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 10px;
+  background-color: #dbdbdb;
+}
+.remove-floor:hover {
+  background: crimson;
+  color: snow;
+}
 
 .buttons button{
   border-color: #d1cfcf;
@@ -225,6 +235,10 @@ body {
 .header-room i {
   padding: 10px 10px 10px 10px;
 }
+
+.relative {
+  position: relative;
+}
 .header-room .button {
   text-align: center;
   display: inline-block;
@@ -308,6 +322,30 @@ ul {
   scale: 0.9;
 }
 
+.status-users-none {
+  border: none;
+  width: 70px;
+  height: 32px;
+  font-size: 11px;
+  margin-left: -10px;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+#custom-status{
+  width: 90%;
+  border: transparent;
+  background-color: #F1F1F1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
 .status-users img {
   width: 75%;
   height: auto;
@@ -387,6 +425,7 @@ ul {
 
 .footer {
   z-index: 20;
+  border-radius: 5px 0 0 5px;
   position: absolute;
   display: flex;
   flex-wrap: wrap;
@@ -409,6 +448,14 @@ ul {
   width: 50px;
 }
 
+.footer .buttons {
+  width: 98px;
+}
+
+.footer .buttons button {
+  width: 98px;
+}
+
 
 .add {
   position: absolute;
@@ -418,35 +465,34 @@ ul {
   color: #ffffff;
   background-color: white;
   z-index: 9999;
-  width: 300px;
-  left: 5px;
+  width: 260px;
+  left: 20px;
   height: 150px;
 }
 
 .add * {
-  margin-left: 40px;
+  margin: auto;
 }
 
 .add p {
   color: black;
-  padding-left: 10px;
-  margin-bottom: 0px;
+  margin-top: 20px;
 }
 
 .input {
-  margin-left: 10px;
+  margin:auto;
 }
 
 input {
   width: 195px;
   height: 30px;
   border-radius: 5px;
+  margin:auto;
 }
 
 .add .btn * {
   color: #ffffff;
   margin-top: 10px;
-  margin-left: 10px;
   height: 35px;
   width: 94px;
   margin-bottom: 10px;
@@ -487,7 +533,7 @@ button {
   position: absolute;
   bottom: 41px;
   background-color: #f1f1f1;
-  min-width: 120px;
+  width: 100px;
   border-radius: 15px;
   border: 1px solid #d9d9d9;
   z-index: 1;
@@ -496,22 +542,16 @@ button {
 }
 
 .show-status p{
-  min-width: 100px;
-  height: 28px;
-  text-align: left;
+  margin: 5px 0 5px 0;
+  width: 100px;
+  height: 20px;
+  text-align: center;
   cursor: pointer;
   font-size: 14px;
   position: static;
   align-items: center;
-  padding-left: 30px;
 }
-.show-status img{
-  width: 20px;
-  height: auto;
-  background-size: cover;
-  position: absolute;
-  left: 5px;
-}
+
 
 .show-status p:hover {
   /* background-color: #d9d9d9; */
@@ -525,21 +565,22 @@ button {
   border: none;
   color: white;
   border-radius: 10px;
-  width: 120px;
-  align-items: center;
-  display: flex;
+  width: 100px;
+  display: block;
   z-index: 10;
+  text-align: center;
 }
 
-#status #statusIcon{
+
+/* #status #statusIcon{
   width: 20px;
   height: auto;
   background-size: cover;
   position: absolute;
   left: 5px;
   top: 5px;
-}
-#status #statusContent{
+} */
+/* #status #statusContent{
   min-width: 25px;
   height: 25px;
   text-align: left;
@@ -547,9 +588,9 @@ button {
   font-size: 14px;
   position: absolute;
   align-items: center;
-  left: 32px;
+  padding-left: 30px;
   bottom: 0px;
-}
+} */
 
 .statusMicHeadphone {
   position:absolute;
@@ -574,8 +615,12 @@ button {
   text-align: center;
 }
 .buttons {
-  padding: 10px 10px 10px 15px;
-  width: 150px;
+  padding: 10px 10px 10px 10px;
+  width: 100px;
+}
+.buttons button{
+  margin: auto;
+
 }
 
 .flex-micheadscreen .mic{
@@ -794,15 +839,7 @@ body {
   position: relative;
   width: 100px;
 }
-input {
-  border: 0;
-  outline: none;
-  box-shadow: none;
-  width: 40px;
-  display: inline-block;
-  height: 30px;
-  text-align: right;
-}
+
 
 .wrapper {
   display: inline-flex;
@@ -837,13 +874,17 @@ input {
   -webkit-transform: rotate(45deg);
   color: rgb(193,195,205);
 }
-/* .up {
-  transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
-    color: rgb(193,195,205);
-} */
-
 
 .general {
   color: #fff;
+}
+
+#custom-status{
+  width: 90%;
+  border: transparent;
+  background-color: #F1F1F1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-top: 4px;
 }

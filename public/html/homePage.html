@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../scss/homePage.css">
-    <link rel="stylesheet" href="../scss/re.css">
+    <!-- <link rel="stylesheet" href="../scss/re.css"> -->
     <link rel="stylesheet" href="../scss/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
@@ -32,30 +32,24 @@
                 <i class="fa-solid fa-gear" ></i>
             </div>
         </div>
-        <!-- begin floor -->
         <div class="floor-list" id="floor-list"> 
             <div id="add-floor"></div>
         </div>
-        <!-- end floor -->
-        <!-- begin room -->
         <div id="room-list" class="room-list">
             <div class="room" id="room">
             </div>
         </div>
-        <!-- end room -->
         <div id="statusMicHeadphone" class="statusMicHeadphone">
             <div class="buttons">
-                <button id="status" onclick="showSelectStatus()">
-                    <img id="statusIcon" src="">
-                    <p id="statusContent"></p>
-                </button>
+                <button id="status" onclick="showSelectStatus()">ステータス</button>
                 <div id="show-status" class="show-status">
-                    <p onclick="changeStatusUser(0)"><img src="../static/offline1.png">オフライン</p>
-                    <p onclick="changeStatusUser(1)"><img src="../static/online1.png">オンライン中</p>
-                    <p onclick="changeStatusUser(2)"><img src="../static/busy1.png">多忙中</p>
-                    <p onclick="changeStatusUser(3)"><img src="../static/leaving1.png">離席中</p>
-                    <p onclick="changeStatusUser(4)"><img src="../static/calling1.png">電話中</p>
-                    <p onclick="changeStatusUser(5)"><img src="../static/sleeping1.png">休憩中</p>
+                    <input id="custom-status" type="text" placeholder="Enter your custom status...."/>
+                    <p onclick="changeStatusUser(0)">オフライン</p>
+                    <p onclick="changeStatusUser(1)">オンライン中</p>
+                    <p onclick="changeStatusUser(2)">多忙中</p>
+                    <p onclick="changeStatusUser(3)">離席中</p>
+                    <p onclick="changeStatusUser(4)">電話中</p>
+                    <p onclick="changeStatusUser(5)">休憩中</p>
                 </div>
             </div>
             <div class="flex-micheadscreen">
@@ -95,7 +89,6 @@
                 <i class="fa-solid fa-right-from-bracket"></i>
             </div>
         </div>
-    
     </body>
 <script src="../../dist/homePage.js"></script>
 <script src="../../dist/settings.js"></script>

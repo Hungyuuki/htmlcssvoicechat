@@ -34,7 +34,7 @@ function createWindow() {
   let screenSize = mainWindow.getBounds()
   // Router
   // and load the index.html of the app.
-  mainWindow.loadFile(getFilePath("public/html/homePage.html"));
+  mainWindow.loadFile(getFilePath("public/html/login.html"));
 
   ipcMain.handle('login-form', async (event, arg) => {
     return new Promise(function (reject) {
